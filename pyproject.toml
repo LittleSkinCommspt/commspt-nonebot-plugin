@@ -1,8 +1,8 @@
 [project]
-name = "nonebot-plugin-example"
+name = "commspt-nonebot-plugin"
 dynamic = ["version"]
-description = "Template plugin project"
-authors = [{ name = "student_2333", email = "lgc2333@126.com" }]
+description = "For LittleSkin Commspt."
+authors = [{ name = "FalfaChino", email = "falfa@chiyoda.moe" }]
 dependencies = [
     "nonebot2>=2.2.0",
     # "pydantic>=1.10.4,<2",
@@ -14,14 +14,14 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.urls]
-homepage = "https://github.com/owner/nonebot-plugin-example"
+homepage = "https://github.com/FalfaChino/commspt-nonebot-plugin"
 
 [tool.pdm.build]
 includes = []
 
 [tool.pdm.version]
 source = "file"
-path = "nonebot_plugin_example/__init__.py"
+path = "commspt_nonebot_plugin/__init__.py"
 
 [build-system]
 requires = ["pdm-backend"]
