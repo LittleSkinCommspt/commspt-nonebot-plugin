@@ -31,7 +31,7 @@ uid_cmd = on_alconna(
         "uid",
         Args["uid", int],
         meta=CommandMeta(
-            description="查询 UID 对应的用户讯息",
+            description="查询 UID 对应的用户档案信息",
             usage="uid <uid>",
             example="uid 123456",
         ),
@@ -73,7 +73,7 @@ view_pro_cmd = on_alconna(
         "view.pro",
         Args["player_name", str],
         meta=CommandMeta(
-            description="查看指定玩家的皮肤预览图 (正版)",
+            description="查看指定玩家的 正版 皮肤预览图",
             usage="view.pro <player_name>",
             example="view.pro SerinaNya",
         ),
