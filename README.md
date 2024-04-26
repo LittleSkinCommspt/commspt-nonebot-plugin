@@ -14,7 +14,7 @@
 
 _✨ 为 LittleSkin Commspt 量身定制的 Nonebot2 插件 ✨_
 
-<img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
+<img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="python">
 <a href="https://pdm.fming.dev">
   <img src="https://img.shields.io/badge/pdm-managed-blueviolet" alt="pdm-managed">
 </a>
@@ -31,7 +31,7 @@ _✨ 为 LittleSkin Commspt 量身定制的 Nonebot2 插件 ✨_
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json" alt="Pydantic Version 2" >
 </a> -->
 <a href="https://pydantic.dev">
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/lgc-NB2Dev/readme/main/template/pyd-v1-or-v2.json" alt="Pydantic Version 1 Or 2" >
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/lgc-NB2Dev/readme/main/template/pyd-v2.json" alt="Pydantic Version 2" >
 </a>
 <!-- <a href="./LICENSE">
   <img src="https://img.shields.io/github/license/FalfaChino/commspt-nonebot-plugin.svg" alt="license">
