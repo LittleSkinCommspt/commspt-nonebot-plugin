@@ -19,7 +19,7 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.urls]
-homepage = "https://github.com/FalfaChino/commspt-nonebot-plugin"
+homepage = "https://github.com/LittleSkinCommspt/commspt-nonebot-plugin"
 
 [tool.pdm.build]
 includes = []

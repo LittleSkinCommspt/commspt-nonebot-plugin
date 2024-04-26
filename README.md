@@ -7,7 +7,7 @@
 </a>
 
 <p>
-  <img src="https://raw.githubusercontent.com/lgc-NB2Dev/readme/main/template/plugin.svg" alt="NoneBotPluginText">
+  <img src="https://raw.githubusercontent.com/LittleSkinCommspt/readme/main/template/plugin.svg" alt="NoneBotPluginText">
 </p>
 
 # commspt-nonebot-plugin
@@ -34,7 +34,7 @@ _✨ 为 LittleSkin Commspt 量身定制的 Nonebot2 插件 ✨_
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/lgc-NB2Dev/readme/main/template/pyd-v2.json" alt="Pydantic Version 2" >
 </a>
 <!-- <a href="./LICENSE">
-  <img src="https://img.shields.io/github/license/FalfaChino/commspt-nonebot-plugin.svg" alt="license">
+  <img src="https://img.shields.io/github/license/LittleSkinCommspt/commspt-nonebot-plugin.svg" alt="license">
 </a>
 <a href="https://pypi.python.org/pypi/commspt-nonebot-plugin">
   <img src="https://img.shields.io/pypi/v/commspt-nonebot-plugin.svg" alt="pypi">

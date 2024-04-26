@@ -9,10 +9,10 @@ __version__ = "0.1.0"
 __plugin_meta__ = PluginMetadata(
     name="commspt-nonebot-plugin",
     description="For LittleSkin Commspt.",
-    usage="No description.",
+    usage="",
     type="application",
-    homepage="https://github.com/FalfaChino/commspt-nonebot-plugin",
+    homepage="https://github.com/LittleSkinCommspt/commspt-nonebot-plugin",
     config=ConfigModel,
     supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna"),
-    extra={"License": "MIT", "Author": "FalfaChino"},
+    extra={"License": "MIT", "Author": "LittleSkin Commspt Team"},
 )
