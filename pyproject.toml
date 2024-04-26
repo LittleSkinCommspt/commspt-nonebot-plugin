@@ -5,11 +5,12 @@ description = "For LittleSkin Commspt."
 authors = [{ name = "FalfaChino", email = "falfa@chiyoda.moe" }]
 dependencies = [
     "nonebot2>=2.2.0",
-    "nonebot-plugin-alconna>=0.40.1",
+    "nonebot-plugin-alconna>=0.43.0",
     "httpx>=0.24",
-    "nonebot-plugin-htmlrender>=0.2.2",
     "jinja2>=3.1.2",
     "yggdrasil-mc>=0.2.3",
+    "arrow>=1.3.0",
+    "email-validator>=2.1.1",
 ]
 requires-python = ">=3.10,<4.0"
 readme = "README.md"

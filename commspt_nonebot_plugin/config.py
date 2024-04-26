@@ -3,7 +3,9 @@ from pydantic import BaseModel
 
 
 class ConfigModel(BaseModel):
-    pass
+    ltsk_api_token: str
+    ltsk_browserless_api: str
+    ltsk_ipip_api: str
 
 
 config: ConfigModel = get_plugin_config(ConfigModel)
