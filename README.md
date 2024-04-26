@@ -47,7 +47,7 @@ _✨ 为 LittleSkin Commspt 量身定制的 Nonebot2 插件 ✨_
 
 ## 📖 介绍
 
-这里是插件的详细介绍部分
+为 LittleSkin Commspt 社区支持 -> QQ 官方群机器人 制作的 nonebot2 插件。
 
 ## 💿 安装
 
