@@ -19,7 +19,7 @@ async def screenshot(
     template_name: str,
     params,
     width: int = 530,
-    height: int = 800,
+    height: int = 800,  # origin: 800
     is_mobile: bool = True,
     device_scale_factor: float = 2.5,
 ) -> bytes:

@@ -143,4 +143,4 @@ class RenderUserInfo(BaseModel):
         ipip = await BingLingIPIP.get(self.ip[0])
         self.network = f"{ipip.country_name}{ipip.region_name}{ipip.city_name} {ipip.isp_domain}{ipip.owner_domain}"
 
-        return await screenshot("user-info.html.jinja", self, height=750)
+        return await screenshot("user-info.html.jinja", self, height=600)
