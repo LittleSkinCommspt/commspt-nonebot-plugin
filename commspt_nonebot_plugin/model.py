@@ -1,11 +1,9 @@
-import ssl
 from datetime import datetime
 from typing import Annotated, Optional
 
 import arrow
 import httpx
 from pydantic import (
-    AfterValidator,
     BaseModel,
     EmailStr,
     Field,
