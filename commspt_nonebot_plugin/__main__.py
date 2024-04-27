@@ -5,7 +5,9 @@ from nonebot.log import logger
 from nonebot_plugin_alconna import AlconnaMatcher, CommandResult, on_alconna
 from nonebot_plugin_alconna.uniseg import Image
 from yggdrasil_mc.exceptions import PlayerNotFoundError
+from nonebot_plugin_session import EventSession, SessionIdType
 
+from .config import config
 from .data_source import get_player_profile_by_name, get_texture_image
 from .model import LittleSkinUser, RenderUserInfo
 
@@ -26,14 +28,14 @@ ygg_cmd = on_alconna(
     skip_for_unmatch=False,
 )
 
-uid_cmd = on_alconna(
+user_cmd = on_alconna(
     Alconna(
-        "uid",
+        "user",
         Args["uid", int],
         meta=CommandMeta(
             description="查询 UID 对应的用户档案信息",
-            usage="uid <uid>",
-            example="uid 123456",
+            usage="user <uid>",
+            example="user 123456",
         ),
     ),
     use_cmd_start=True,
@@ -112,16 +114,18 @@ async def _(matcher: AlconnaMatcher, parma: Arparma):
 
 
 # region uid cmd
-@uid_cmd.handle()
-async def _(matcher: AlconnaMatcher, res: CommandResult):
+@user_cmd.handle()
+async def _(matcher: AlconnaMatcher, res: CommandResult, session: EventSession):
+    if session.get_id(SessionIdType.GROUP) != config.ltsk_commspt_group:
+        await matcher.finish()
     if not res.result.error_info:
         return
     if isinstance(res.result.error_info, SpecialOptionTriggered):
         await matcher.finish(res.output)
-    await matcher.finish(f"{res.result.error_info}\n使用指令 `uid -h` 查看帮助")
+    await matcher.finish(f"{res.result.error_info}\n使用指令 `user -h` 查看帮助")
 
 
-@uid_cmd.handle()
+@user_cmd.handle()
 async def _(matcher: AlconnaMatcher, parma: Arparma):
     uid = parma["uid"]
     logger.info(f"Searching UID {uid}")

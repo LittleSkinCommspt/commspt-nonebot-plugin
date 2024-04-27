@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform"]
 lock_version = "4.4.1"
-content_hash = "sha256:86696d25d1519c8dece73d101c752537887735b91f5235ed46ed32d87c2115a1"
+content_hash = "sha256:afa7fb5f9822a0e9dae7f717c7226f92b484a777d713612b3976e85de3bb7e44"
 
 [[package]]
 name = "annotated-types"
@@ -433,6 +433,20 @@ files = [
 ]
 
 [[package]]
+name = "nonebot-plugin-session"
+version = "0.3.1"
+requires_python = ">=3.8,<4.0"
+summary = "Nonebot2 会话信息提取与会话id定义"
+dependencies = [
+    "nonebot2<3.0.0,>=2.0.0",
+    "strenum<0.5.0,>=0.4.8",
+]
+files = [
+    {file = "nonebot_plugin_session-0.3.1-py3-none-any.whl", hash = "sha256:7d21ed11a7d2a3bc9466be11f9653270ff0951585bd8e6fdd8034274e883ffb0"},
+    {file = "nonebot_plugin_session-0.3.1.tar.gz", hash = "sha256:ba93b4b8e86394aa06ae099cd17c191e131f0d123a97e0c040578c08614fe306"},
+]
+
+[[package]]
 name = "nonebot2"
 version = "2.2.1"
 requires_python = ">=3.8,<4.0"
@@ -681,6 +695,15 @@ summary = "Sans-I/O implementation of SOCKS4, SOCKS4A, and SOCKS5."
 files = [
     {file = "socksio-1.0.0-py3-none-any.whl", hash = "sha256:95dc1f15f9b34e8d7b16f06d74b8ccf48f609af32ab33c608d08761c5dcbb1f3"},
     {file = "socksio-1.0.0.tar.gz", hash = "sha256:f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"},
+]
+
+[[package]]
+name = "strenum"
+version = "0.4.15"
+summary = "An Enum that inherits from str."
+files = [
+    {file = "StrEnum-0.4.15-py3-none-any.whl", hash = "sha256:a30cda4af7cc6b5bf52c8055bc4bf4b2b6b14a93b574626da33df53cf7740659"},
+    {file = "StrEnum-0.4.15.tar.gz", hash = "sha256:878fb5ab705442070e4dd1929bb5e2249511c0bcf2b0eeacf3bcd80875c82eff"},
 ]
 
 [[package]]
