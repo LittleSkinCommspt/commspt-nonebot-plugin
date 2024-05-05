@@ -120,9 +120,6 @@ plugins = [
 
 |         配置项          | 必填 | 默认值 |            示例             |            说明             |
 | :---------------------: | :--: | :----: | :-------------------------: | :-------------------------: |
-|    `LTSK_API_TOKEN`     |  是  |   无   | `xxxxxx-xxxxxxxxxxx-xxxxxx` |  Blessing Skin Admin Token   |
-| `LTSK_BROWSERLESS_API`  |  是  |   无   |   `http://10.0.0.5:19800`   | 远程 Browserless 服务端地址 |
-|     `LTSK_IPIP_API`     |  是  |   无   |   `http://10.0.0.10:9999`   |    IPIP 数据库 API 地址     |
 | `LTSK_SKINRENDERMC_API` |  是  |   无   | `http://10.0.10.100:10086`  |    SkinRenderMC API 地址    |
 
 ## 🎉 使用
@@ -132,7 +129,6 @@ plugins = [
 |    指令    | 权限 | 需要@ | 范围 |                        说明                         |
 | :--------: | :--: | :---: | :--: | :-------------------------------------------------: |
 |   `ygg`    | 群员 |  否   | 通用 |            查询玩家的 Yggdrasil 档案信息            |
-|   `uid`    | 群员 |  否   | 通用 |             查询 UID 对应的用户档案信息             |
 | `view.ygg` | 群员 |  否   | 通用 | 查看指定玩家的 Yggdrasil 皮肤预览图 (等同于 `view`) |
 | `view.pro` | 群员 |  否   | 通用 |           查看指定玩家的 正版 皮肤预览图            |
 
