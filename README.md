@@ -120,7 +120,7 @@ plugins = [
 
 |         配置项          | 必填 | 默认值 |            示例             |            说明             |
 | :---------------------: | :--: | :----: | :-------------------------: | :-------------------------: |
-|    `LTSK_API_TOKEN`     |  是  |   无   | `xxxxxx-xxxxxxxxxxx-xxxxxx` |  Blessing SKinAdmin Token   |
+|    `LTSK_API_TOKEN`     |  是  |   无   | `xxxxxx-xxxxxxxxxxx-xxxxxx` |  Blessing Skin Admin Token   |
 | `LTSK_BROWSERLESS_API`  |  是  |   无   |   `http://10.0.0.5:19800`   | 远程 Browserless 服务端地址 |
 |     `LTSK_IPIP_API`     |  是  |   无   |   `http://10.0.0.10:9999`   |    IPIP 数据库 API 地址     |
 | `LTSK_SKINRENDERMC_API` |  是  |   无   | `http://10.0.10.100:10086`  |    SkinRenderMC API 地址    |
