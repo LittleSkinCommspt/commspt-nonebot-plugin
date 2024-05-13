@@ -89,6 +89,10 @@ async def _(matcher: AlconnaMatcher, parma: Arparma):
         )
     except PlayerNotFoundError:
         await matcher.finish(f"「{player_name}」不存在")
+    except HTTPStatusError as e:
+        await matcher.finish(
+            f"请求 Yggdrasil API 时发生错误: {e.response.status_code} | {e.response.text}",
+        )
     await matcher.finish(profile)
 
 
