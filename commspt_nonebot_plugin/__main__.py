@@ -5,7 +5,8 @@ from nonebot_plugin_alconna import AlconnaMatcher, CommandResult, on_alconna
 from nonebot_plugin_alconna.uniseg import Image
 from yggdrasil_mc.exceptions import PlayerNotFoundError
 
-from .data_source import get_player_profile_by_name, get_texture_image
+from .util import get_player_profile_by_name, get_texture_image
+
 
 LTSK_YGG = "https://littleskin.cn/api/yggdrasil"
 
@@ -64,6 +65,40 @@ view_pro_cmd = on_alconna(
     ),
     use_cmd_start=True,
     skip_for_unmatch=False,
+)
+
+csl_latest_cmd = on_alconna(
+    Alconna(
+        "csl.latest",
+        meta=CommandMeta(
+            description="获取 CustomSkinLoader 最新版本信息",
+            usage="csl.latest",
+            example="csl.latest",
+        ),
+    )
+)
+
+ygg_latest = on_alconna(
+    Alconna(
+        "ygg.latest",
+        meta=CommandMeta(
+            description="获取 Yggdrasil 最新版本信息",
+            usage="ygg.latest",
+            example="ygg.latest",
+        ),
+    )
+)
+
+java_latest = on_alconna(
+    Alconna(
+        "java.latest",
+        Args["version", int, 17]["type", str, "jre"]["os", str, "windows"],
+        meta=CommandMeta(
+            description="获取 Java 最新版本信息",
+            usage="java.latest [version] [type] [os]",
+            example="java.latest 17 jdk windows",
+        ),
+    )
 )
 # endregion
 
@@ -150,6 +185,24 @@ async def _(matcher: AlconnaMatcher, parma: Arparma):
             f"请求 SkinRenderMC 时发生错误: {e.response.status_code} | {e.response.text}",
         )
     await matcher.finish(Image(raw=image))
+
+
+# endregion
+
+
+# region csl.latest cmd
+@csl_latest_cmd.handle()
+async def _(matcher: AlconnaMatcher, res: CommandResult):
+    if not res.result.error_info:
+        return
+    if isinstance(res.result.error_info, SpecialOptionTriggered):
+        await matcher.finish(res.output)
+    await matcher.finish(f"{res.result.error_info}\n使用指令 `csl.latest -h` 查看帮助")
+
+
+@csl_latest_cmd.handle()
+async def _(matcher: AlconnaMatcher):
+    await matcher.finish("CustomSkinLoader 最新版本信息")
 
 
 # endregion
