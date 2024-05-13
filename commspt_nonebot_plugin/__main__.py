@@ -94,7 +94,7 @@ ygg_latest = on_alconna(
             usage="ygg.latest",
             example="ygg.latest",
         ),
-    )，
+    ),
     use_cmd_start=True,
     skip_for_unmatch=False,
 )
