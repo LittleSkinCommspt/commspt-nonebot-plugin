@@ -5,7 +5,13 @@ from nonebot_plugin_alconna import AlconnaMatcher, CommandResult, on_alconna
 from nonebot_plugin_alconna.uniseg import Image
 from yggdrasil_mc.exceptions import PlayerNotFoundError
 
-from .util import get_player_profile_by_name, get_texture_image
+from .util import (
+    get_player_profile_by_name,
+    get_texture_image,
+    get_authlib_injector_latest,
+    get_csl_latest,
+    get_liberica_java_latest,
+)
 
 
 LTSK_YGG = "https://littleskin.cn/api/yggdrasil"
@@ -75,7 +81,9 @@ csl_latest_cmd = on_alconna(
             usage="csl.latest",
             example="csl.latest",
         ),
-    )
+    ),
+    use_cmd_start=True,
+    skip_for_unmatch=False,
 )
 
 ygg_latest = on_alconna(
@@ -86,7 +94,9 @@ ygg_latest = on_alconna(
             usage="ygg.latest",
             example="ygg.latest",
         ),
-    )
+    )，
+    use_cmd_start=True,
+    skip_for_unmatch=False,
 )
 
 java_latest = on_alconna(
@@ -98,7 +108,9 @@ java_latest = on_alconna(
             usage="java.latest [version] [type] [os]",
             example="java.latest 17 jdk windows",
         ),
-    )
+    ),
+    use_cmd_start=True,
+    skip_for_unmatch=False,
 )
 # endregion
 
@@ -202,7 +214,62 @@ async def _(matcher: AlconnaMatcher, res: CommandResult):
 
 @csl_latest_cmd.handle()
 async def _(matcher: AlconnaMatcher):
-    await matcher.finish("CustomSkinLoader 最新版本信息")
+    csl_latest = await get_csl_latest()
+    await matcher.finish(
+        f"「CustomSkinLoader」\n当前最新版本 > {csl_latest.version}\n\n{csl_latest.downloads.generate_download_text}",
+    )
+
+
+# endregion
+
+
+# region ygg.latest cmd
+@ygg_latest.handle()
+async def _(matcher: AlconnaMatcher, res: CommandResult):
+    if not res.result.error_info:
+        return
+    if isinstance(res.result.error_info, SpecialOptionTriggered):
+        await matcher.finish(res.output)
+    await matcher.finish(f"{res.result.error_info}\n使用指令 `ygg.latest -h` 查看帮助")
+
+
+@ygg_latest.handle()
+async def _(matcher: AlconnaMatcher):
+    ygg_latest = await get_authlib_injector_latest()
+    await matcher.finish(
+        f"「Authlib Injector」\n当前最新版本 > {ygg_latest.version}\n下载地址 > {ygg_latest.download_url}",
+    )
+
+
+# endregion
+
+
+# region java.latest cmd
+@java_latest.handle()
+async def _(matcher: AlconnaMatcher, res: CommandResult):
+    if not res.result.error_info:
+        return
+    if isinstance(res.result.error_info, SpecialOptionTriggered):
+        await matcher.finish(res.output)
+    await matcher.finish(f"{res.result.error_info}\n使用指令 `java.latest -h` 查看帮助")
+
+
+@java_latest.handle()
+async def _(matcher: AlconnaMatcher, parma: Arparma):
+    version: int = parma["version"]
+    type: str = parma["type"]
+    os: str = parma["os"]
+    java_latest = await get_liberica_java_latest(
+        version_feature=version,
+        bundle_type=f"{type}-full",
+        os=os,
+    )
+    await matcher.finish(
+        f"「Liberica Java {java_latest[0].feature_version} ({java_latest[0].bundle_type})」\n下载地址 > {java_latest[0].download_url_mirror}",
+    )
+
+
+# endregion
 
 
 # endregion
