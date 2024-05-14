@@ -214,10 +214,11 @@ async def _(matcher: AlconnaMatcher, res: CommandResult):
 
 @csl_latest_cmd.handle()
 async def _(matcher: AlconnaMatcher):
-    csl_latest = await get_csl_latest()
-    await matcher.finish(
-        f"「CustomSkinLoader」\n当前最新版本 > {csl_latest.version}\n\n{csl_latest.downloads.generate_download_text}",
-    )
+    # csl_latest = await get_csl_latest()
+    # await matcher.finish(
+    #     f"「CustomSkinLoader」\n当前最新版本 > {csl_latest.version}\n\n{csl_latest.downloads.generate_download_text}",
+    # )
+    await matcher.finish("「CustomSkinLoader」\n请前往 https://littleskin.cn/user/config 下载")
 
 
 # endregion
